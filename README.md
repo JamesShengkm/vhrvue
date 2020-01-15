@@ -1,25 +1,13 @@
-# vuehr
-
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
-
+###前后台交互采用axios进行对响应拦截进行处理
+api.js
+    响应拦截
+    axios.interceptors.response.use( success => {
+        .....
+    } ,error =>{
+        .....
+    }
 ###菜单项数据加载成功之后，在前端有几个可以存放的地方：
-
 1.sessionStorage
 2.localStorage 
 3.vuex
+###
