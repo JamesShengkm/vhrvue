@@ -14,7 +14,7 @@
                 <el-input type="text" v-model="loginForm.username" auto-complete="off" placeholder="请输入用户名"></el-input>
             </el-form-item>
             <el-form-item prop="password">
-                <el-input type="text" v-model="loginForm.password" auto-complete="off" placeholder="请输入密码"></el-input>
+                <el-input type="text" v-model="loginForm.password" auto-complete="off" placeholder="请输入密码"  @keydown.enter.native="submitLogin"></el-input>
             </el-form-item>
             <el-checkbox size="normal" class="loginRemember" v-model="checked">记住密码</el-checkbox>
 
@@ -24,7 +24,7 @@
 </template>
 
 <script>
-    import {postKeyValueRequest} from "../utils/api";
+    // import {postKeyValueRequest} from "../utils/api";
     export default {
         name: "Login",
         data(){
@@ -47,10 +47,10 @@
                 this.$refs.loginForm.validate((valid) => {
                     if (valid) {
                         this.loading = true;
-                        console.log(this.loginForm)
-                        postKeyValueRequest('/doLogin', this.loginForm).then(resp => {
-                            console.log(resp)
-                            console.log("111")
+                        // console.log(this.loginForm)
+                        this.postKeyValueRequest('/doLogin', this.loginForm).then(resp => {
+                            // console.log(resp)
+                            // console.log("111")
                             this.loading = false;
                             if (resp) {
 

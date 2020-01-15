@@ -1,6 +1,6 @@
 import axios from 'axios';
 import {Message} from 'element-ui';
-// import router from "../router";
+import router from "../router";
 
 /*响应拦截器*/
 axios.interceptors.response.use( success => {
@@ -31,8 +31,9 @@ axios.interceptors.response.use( success => {
 })
 
 
-let base = '';
 
+let base = '';
+/*kv结构的post 请求*/
 export const postKeyValueRequest = (url, params) => {
     return axios({
         method: 'post',
@@ -49,4 +50,36 @@ export const postKeyValueRequest = (url, params) => {
             'Content-Type': 'application/x-www-form-urlencoded'
         }
     });
+}
+/* json 形式*/
+export const postRequest = (url, params) => {
+    return axios({
+        method: 'post',
+        url: `${base}${url}`,
+        data: params
+    })
+}
+
+export const putRequest = (url, params) => {
+    return axios({
+        method: 'put',
+        url: `${base}${url}`,
+        data: params
+    })
+}
+
+export const getRequest = (url, params) => {
+    return axios({
+        method: 'get',
+        url: `${base}${url}`,
+        data: params
+    })
+}
+
+export const deleteRequest = (url, params) => {
+    return axios({
+        method: 'delete',
+        url: `${base}${url}`,
+        data: params
+    })
 }
