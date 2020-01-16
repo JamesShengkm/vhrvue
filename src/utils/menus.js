@@ -7,7 +7,7 @@ export const initMenu = (router, store) => {
     }
     getRequest("/system/config/menu").then(data => {
         if (data) {
-            console.log(data)
+            // console.log(data)
             let fmtRoutes = formatRoutes(data);
             router.addRoutes(fmtRoutes);
             // console.log(fmtRoutes)
@@ -40,7 +40,7 @@ export const formatRoutes = (routes) => {
             component(resolve) {  //动态加载 component
                 // console.log(component)
                 if (component.startsWith("Home")) {
-                    console.log(resolve)
+                    // console.log(resolve)
                     require(['../views/' + component + '.vue'], resolve);
                 } else if (component.startsWith("Emp")) {
                     require(['../views/emp/' + component + '.vue'], resolve);

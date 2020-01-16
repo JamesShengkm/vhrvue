@@ -32,14 +32,14 @@ router.beforeEach((to, from, next) => {
   if (to.path == '/') { //登录页放过
     next();
   }else {
-    initMenu(router, store);
-    next();
-    /*if (window.sessionStorage.getItem("user")) {
+    /*initMenu(router, store);
+    next();*/
+    if (window.sessionStorage.getItem("user")) {
       initMenu(router, store);
       next();
     }else{
-      next('/?redirect='+to.path);
-    }*/
+      next('/?redirect='+to.path);  //没有登录重定向
+    }
   }
 })
 

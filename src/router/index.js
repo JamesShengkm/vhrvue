@@ -15,7 +15,10 @@ const routes = [
     path: '/home',
     name: 'Home',
     component: Home,
-    hidden:true
+    hidden:true,
+    meta:{
+      roles:['admin','user']
+    }
   }
 ]
 
