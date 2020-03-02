@@ -57,9 +57,9 @@
                                 // this.$store.commit('INIT_CURRENTHR', resp.obj);
                                 /*登录成功之后将用户的信息存储在 sessionStorage 中*/
                                 window.sessionStorage.setItem("user", JSON.stringify(resp.obj));
-                                // let path = this.$route.query.redirect;
+                                let path = this.$route.query.redirect;
                                 //页面跳转  不能回到登录页面了
-                                this.$router.replace('/home')
+                                this.$router.replace((path=='/'||path==undefined)?'/home':path)
                             }
                         })
                     } else {
