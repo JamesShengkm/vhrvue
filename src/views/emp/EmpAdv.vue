@@ -1,6 +1,7 @@
 <template>
     <div>
-        基本资料
+        高级资料
+
     </div>
 </template>
 
@@ -8,6 +9,7 @@
     export default {
         name: "EmpAdv"
     }
+
 </script>
 
 <style scoped>
